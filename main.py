@@ -26,3 +26,16 @@ operations = {
   "*": multiply,
   "/": divide,
 }
+
+num1 = int(input("What's the first number?: "))
+num2 = int(input("What's the second number?: "))
+
+symbol_string = ""
+for symbol in operations:
+  symbol_string += symbol + " "
+
+operation_symbol = input(f"Pick an operation [{symbol_string}]: ")
+
+answer = (operations[operation_symbol])(num1,num2)
+                            
+print(f"{num1} {operation_symbol} {num2} = {answer}")
