@@ -28,14 +28,27 @@ operations = {
 }
 
 num1 = int(input("What's the first number?: "))
-num2 = int(input("What's the second number?: "))
 
 symbol_string = ""
 for symbol in operations:
   symbol_string += symbol + " "
 
-operation_symbol = input(f"Pick an operation [{symbol_string}]: ")
+another_calc = True
 
-answer = (operations[operation_symbol])(num1,num2)
-                            
-print(f"{num1} {operation_symbol} {num2} = {answer}")
+while another_calc: 
+  operation_symbol = input(f"Pick an operation [{symbol_string}]: ")
+  
+  num2 = int(input("What's the next number?: "))
+  
+  answer = (operations[operation_symbol])(num1,num2)
+                              
+  print(f"{num1} {operation_symbol} {num2} = {answer}")
+  
+  calculate_more = input(f"Type 'y' to continue calculating with {answer}, or type 'n' to exist:  ")
+  if calculate_more == 'y':
+    another_calc = True
+    num1 = answer
+  else:
+    another_calc = False
+    print("Goodbye")
+
