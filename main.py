@@ -1,23 +1,24 @@
 #Calculator
+from art import logo
 
 #Add
 def add (n1, n2):
-  """Adds two inputted parameters together"""
+  """Adds two input parameters together"""
   return n1 + n2
 
 #Subtract
 def subtract(n1, n2):
-  """Subtracts 2nd inputted parameter from first input"""
+  """Subtracts 2nd input parameter from first input"""
   return n1 - n2
 
 #Multiply
 def multiply(n1, n2):
-  """Multiplies two inputted parameters"""
+  """Multiplies two input parameters"""
   return n1 * n2
-
+    
 #Divide
 def divide(n1, n2):
-  """Dividies first inputted paramete by second parameter"""
+  """Divides first input parameter by second parameter"""
   return n1 / n2
 
 operations = {
@@ -28,7 +29,8 @@ operations = {
 }
 
 def calculator():
-  num1 = int(input("What's the first number?: "))
+  print(logo)
+  num1 = float(input("What's the first number?: "))
   
   symbol_string = ""
   for symbol in operations:
@@ -39,7 +41,7 @@ def calculator():
   while another_calc: 
     operation_symbol = input(f"Pick an operation [{symbol_string}]: ")
     
-    num2 = int(input("What's the next number?: "))
+    num2 = float(input("What's the next number?: "))
     
     answer = (operations[operation_symbol])(num1,num2)
                                 
